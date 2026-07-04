@@ -1,4 +1,5 @@
 # helix-bioworks-api
+a continuation of https://github.com/Vandrae/helix-bioworks
 ## Getting Started
 
 ### Prerequisites
