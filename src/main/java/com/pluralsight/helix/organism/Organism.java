@@ -1,5 +1,7 @@
 package com.pluralsight.helix.organism;
 
+import com.pluralsight.Credits;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -130,4 +132,8 @@ public class Organism {
     public void addBehaviors(Behaviors singleBehavior) {
         behaviors.add(singleBehavior);
     }
+
+
+
+}
 
