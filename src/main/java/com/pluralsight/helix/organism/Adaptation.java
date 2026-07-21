@@ -1,4 +1,4 @@
-package com.pluralsight.helix.order;
+package com.pluralsight.helix.organism;
 
 public class Adaptation {
     private String name;
