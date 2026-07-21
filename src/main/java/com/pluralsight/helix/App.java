@@ -1,8 +1,7 @@
 package com.pluralsight.helix;
 
-import com.pluralsight.creature.*;
-import com.pluralsight.helix.order.ReceiptWriter;
-import com.pluralsight.order.*;
+import com.pluralsight.helix.organism.*;
+import com.pluralsight.helix.order.*;
 
 import java.util.Scanner;
 
