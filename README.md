@@ -95,9 +95,13 @@ Spliced from multiple predator lineages — big cat musculature, shark sensory a
 
 ## Tech Stack
 
-- **Language:** Java 17
-- **Build Tool:** Apache Maven
-- **Package:** `com.pluralsight`
+| Layer | Technology |
+|---|---|
+| Language | Java 17 |
+| Framework | Spring Boot |
+| Security | Spring Security + JWT |
+| ORM | Spring Data JPA / Hibernate |
+| Database | MySQL |
 
 ---
 
