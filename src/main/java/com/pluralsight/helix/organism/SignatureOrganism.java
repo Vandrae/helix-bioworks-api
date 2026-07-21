@@ -1,5 +1,7 @@
 package com.pluralsight.helix.organism;
 
+import com.pluralsight.helix.Credits;
+
 public class SignatureOrganism extends Organism {
 
     public SignatureOrganism(Genome genome, Scale scale, boolean acceleratedGrowth) {

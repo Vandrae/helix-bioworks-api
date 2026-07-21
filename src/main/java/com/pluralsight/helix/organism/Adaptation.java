@@ -1,5 +1,7 @@
 package com.pluralsight.helix.organism;
 
+import com.pluralsight.helix.Credits;
+
 public class Adaptation {
     private String name;
     private Credits basePrice;

@@ -1,6 +1,8 @@
 package com.pluralsight.helix.organism;
 
-import com.pluralsight.Credits;
+
+
+import com.pluralsight.helix.Credits;
 
 import java.util.ArrayList;
 import java.util.List;

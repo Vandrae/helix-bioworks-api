@@ -1,5 +1,7 @@
 package com.pluralsight.helix.order;
 
+import com.pluralsight.helix.Credits;
+
 public enum Size {
     SMALL,
     MEDIUM,

@@ -1,5 +1,7 @@
 package com.pluralsight.helix.organism;
 
+import com.pluralsight.helix.Credits;
+
 public enum Scale {
     CLASS_I,
     CLASS_II,
