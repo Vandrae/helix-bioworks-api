@@ -1,11 +1,27 @@
 package com.pluralsight.helix.organism;
 
 import com.pluralsight.helix.Credits;
+import jakarta.persistence.*;
+
+@MappedSuperclass
 
 public class Adaptation {
+    //auto increment handled by the db because of (strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
     private String name;
-    private Credits basePrice;
+
+    @Column(name = "base_price")
+    private double basePrice;
+
+    @Column(name = "is_extra")
     private boolean isExtra;
+
+    @ManyToOne
+    @JoinColumn(name = "organism_id")
+    private Organism organism;
 
     //methods
     public Credits getPrice(Scale scale) {
