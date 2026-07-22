@@ -1,6 +1,12 @@
 package com.pluralsight.helix.organism;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToOne;
+
+@Entity
 public class Behaviors {
+    @ManyToOne
+    int id;
     private String name;
 
     //methods

@@ -1,7 +1,12 @@
 package com.pluralsight.helix.organism;
 
-public class StandardMod {
+import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToOne;
 
+@Entity
+public class StandardMod {
+    @ManyToOne
+    int id;
     private String name;
 
     //methods
