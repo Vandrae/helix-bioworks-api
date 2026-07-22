@@ -50,7 +50,7 @@ public class Adaptation {
     }
 
     //constructor
-    public Adaptation(String name, Credits basePrice, boolean isExtra) {
+    public Adaptation(String name, double basePrice, boolean isExtra) {
         this.name = name;
         this.basePrice = basePrice;
         this.isExtra = isExtra;
