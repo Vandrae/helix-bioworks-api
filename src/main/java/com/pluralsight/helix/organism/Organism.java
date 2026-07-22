@@ -3,20 +3,25 @@ package com.pluralsight.helix.organism;
 
 
 import com.pluralsight.helix.Credits;
+import jakarta.persistence.*;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Entity
+@Table(name = "organisms")
 
 public class Organism {
-    private final ArrayList<OffensiveAdaptation> weapons;
-    private final ArrayList<DefensiveAdaptation> defenses;
-    private final ArrayList<StandardMod> mods;
-    private final ArrayList<Behaviors> behaviors;
+
+    private int id;
+    private String name;
+    @Enumerated(EnumType.STRING)
     private final Genome genome;
+    @Enumerated(EnumType.STRING)
     private final Scale scale;
     boolean acceleratedGrowth;
+    @OneToMany(mappedBy = "organism")
 
     //methods
     public Credits getPrice() {
