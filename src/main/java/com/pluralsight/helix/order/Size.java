@@ -6,19 +6,19 @@ public enum Size {
     LARGE,
     EXTRA_LARGE;
 
-    public Credits getPrice(){
+    public Double getPrice(){
         switch (this){
             case SMALL -> {
-                return new Credits(500);
+                return 500.00;
             }
             case MEDIUM -> {
-                return new Credits(1000);
+                return 1000.00;
             }
             case LARGE -> {
-                return new Credits(2000);
+                return 2000.00;
             }
             case EXTRA_LARGE -> {
-                return new Credits(5000);
+                return 5000.00;
             }default -> throw new IllegalStateException("Unknown Size");
         }
     }

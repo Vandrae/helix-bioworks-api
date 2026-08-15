@@ -33,20 +33,20 @@ public class Order {
         maintenance = null;
     }
 
-    public Credits getTotal() {
-        Credits total = new Credits(0);
+    public Double getTotal() {
+        Double total = 0;
         for (Organism singleCreature : creature) {
-            total = total.add(singleCreature.getPrice());
+            total = total + singleCreature.getPrice();
         }
 
         //if there is nothing on the transport package list don't print the list
         if (transportPackage != null) {
-            total = total.add(transportPackage.getPrice());
+            total = total + transportPackage.getPrice();
         }
 
         //if there is nothing on the transport package list don't print the list
         if (maintenance != null) {
-            total = total.add(maintenance.getPrice());
+            total = total + maintenance.getPrice();
         }
         return total;
     }

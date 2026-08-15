@@ -4,7 +4,7 @@ public class TransportPackage {
     private final Size size;
 
     //methods
-    public Credits getPrice(){
+    public Double getPrice(){
         return size.getPrice();
     }
 

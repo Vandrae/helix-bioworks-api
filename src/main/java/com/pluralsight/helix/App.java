@@ -263,27 +263,27 @@ public class App {
 
             switch (offensiveInput) {
                 case 1:
-                    organismChoice.addWeapons(new OffensiveAdaptation("Venom Glands", new Credits(500), false));
+                    organismChoice.addWeapons(new OffensiveAdaptation("Venom Glands", 500, false));
                     System.out.println("Venom Glands has been added");
                     break;
                 case 2:
-                    organismChoice.addWeapons(new OffensiveAdaptation("Razor bone spurs", new Credits(500), false));
+                    organismChoice.addWeapons(new OffensiveAdaptation("Razor bone spurs", 500, false));
                     System.out.println("Razor bone spurs has been added");
                     break;
                 case 3:
-                    organismChoice.addWeapons(new OffensiveAdaptation("Bio-electric organs", new Credits(500), false));
+                    organismChoice.addWeapons(new OffensiveAdaptation("Bio-electric organs", 500, false));
                     System.out.println("Bio-electric organs has been added");
                     break;
                 case 4:
-                    organismChoice.addWeapons(new OffensiveAdaptation("Acid secretion sacs", new Credits(500), false));
+                    organismChoice.addWeapons(new OffensiveAdaptation("Acid secretion sacs", 500, false));
                     System.out.println("Acid secretion sacs has been added");
                     break;
                 case 5:
-                    organismChoice.addWeapons(new OffensiveAdaptation("Crushing Appendages", new Credits(500), false));
+                    organismChoice.addWeapons(new OffensiveAdaptation("Crushing Appendages", 500, false));
                     System.out.println("Crushing Appendages has been added");
                     break;
                 case 6:
-                    organismChoice.addWeapons(new OffensiveAdaptation("Active Camouflage", new Credits(500), false));
+                    organismChoice.addWeapons(new OffensiveAdaptation("Active Camouflage",500, false));
                     System.out.println("Active Camouflage has been added");
                     break;
                 case 0:
@@ -315,27 +315,27 @@ public class App {
 
             switch (defensiveInput) {
                 case 1:
-                    organismChoice.addDefenses(new DefensiveAdaptation("Subdermal Armor", new Credits(500), false));
+                    organismChoice.addDefenses(new DefensiveAdaptation("Subdermal Armor", 500, false));
                     System.out.println("Subdermal Armor has been added");
                     break;
                 case 2:
-                    organismChoice.addDefenses(new DefensiveAdaptation("Rapid Clotting Tissue", new Credits(500), false));
+                    organismChoice.addDefenses(new DefensiveAdaptation("Rapid Clotting Tissue", 500, false));
                     System.out.println("Rapid Clotting Tissue has been added");
                     break;
                 case 3:
-                    organismChoice.addDefenses(new DefensiveAdaptation("Toxin Immunity", new Credits(500), false));
+                    organismChoice.addDefenses(new DefensiveAdaptation("Toxin Immunity", 500, false));
                     System.out.println("Toxin Immunity has been added");
                     break;
                 case 4:
-                    organismChoice.addDefenses(new DefensiveAdaptation("Chromatophore Camo", new Credits(500), false));
+                    organismChoice.addDefenses(new DefensiveAdaptation("Chromatophore Camo", 500, false));
                     System.out.println("Chromatophore Camo has been added");
                     break;
                 case 5:
-                    organismChoice.addDefenses(new DefensiveAdaptation("Severe Heat Hide", new Credits(500), false));
+                    organismChoice.addDefenses(new DefensiveAdaptation("Severe Heat Hide", 500, false));
                     System.out.println("Severe Heat Hide has been added");
                     break;
                 case 6:
-                    organismChoice.addDefenses(new DefensiveAdaptation("Severe Cold Hide", new Credits(500), false));
+                    organismChoice.addDefenses(new DefensiveAdaptation("Severe Cold Hide", 500, false));
                     System.out.println("Severe Cold Hide has been added");
                     break;
                 case 0:
@@ -479,6 +479,9 @@ public class App {
         System.out.println(" ");
         int templateInput = input.nextInt();
 
+        /*
+        entire menu system will be replaced by api end points this one has been deleted
+
         switch (templateInput) {
             case 1:
                 order.addOrganism(SignatureOrganism.phantom());
@@ -488,6 +491,7 @@ public class App {
             case 0:
                 break;
         }
+        */
     }
 
     public static void transportPackage() {
