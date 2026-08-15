@@ -50,22 +50,22 @@ public class Organism {
         // the price of the creature's size
         for (OffensiveAdaptation weapon : weapons) {
             if (wepCount <= 2) {
-                total = total + weapon.getPrice(scale).amount();
+                total = total + weapon.getPrice(scale);
             } else {
                 //compounding price if there are more than 3 adaptations on a single creature
                 //total of the first 3 x the price of the 4th
                 //total of 3 x the price of the 4th x the price of the 5th
-                total = total * weapon.getPrice(scale).amount();
+                total = total * weapon.getPrice(scale);
             }
             wepCount += 1;
         }
 
         for (DefensiveAdaptation defense : defenses) {
             if (defCount <= 2) {
-                total = total + defense.getPrice(scale).amount();
+                total = total + defense.getPrice(scale);
             } else {
 
-                total = total * defense.getPrice(scale).amount();
+                total = total * defense.getPrice(scale);
             }
             defCount += 1;
         }
