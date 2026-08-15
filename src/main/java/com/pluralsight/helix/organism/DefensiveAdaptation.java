@@ -1,6 +1,5 @@
 package com.pluralsight.helix.organism;
 
-import com.pluralsight.helix.Credits;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 

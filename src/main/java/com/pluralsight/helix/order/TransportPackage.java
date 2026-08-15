@@ -1,7 +1,5 @@
 package com.pluralsight.helix.order;
 
-import com.pluralsight.helix.Credits;
-
 public class TransportPackage {
     private final Size size;
 

@@ -2,7 +2,6 @@ package com.pluralsight.helix.organism;
 
 
 
-import com.pluralsight.helix.Credits;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;

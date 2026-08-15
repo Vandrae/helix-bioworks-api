@@ -1,6 +1,5 @@
 package com.pluralsight.helix.order;
 
-import com.pluralsight.helix.Credits;
 import com.pluralsight.helix.organism.Organism;
 
 import java.util.ArrayList;
