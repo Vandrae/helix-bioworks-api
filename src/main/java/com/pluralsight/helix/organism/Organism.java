@@ -14,12 +14,14 @@ import java.util.stream.Collectors;
 
 public class Organism {
 
+    @Id
+    @GeneratedValue
     private int id;
     private String name;
     @Enumerated(EnumType.STRING)
-    private final Genome genome;
+    private Genome genome;
     @Enumerated(EnumType.STRING)
-    private final Scale scale;
+    private Scale scale;
     boolean acceleratedGrowth;
 
     //@OneToMany tells jpa that each organism has multiple of this
