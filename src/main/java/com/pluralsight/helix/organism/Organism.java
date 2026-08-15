@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 public class Organism {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
     @Enumerated(EnumType.STRING)
@@ -35,10 +35,12 @@ public class Organism {
     private List<Behaviors> behaviors;
 
     @OneToMany(mappedBy = "organism")
-    private List<StandardMod> standardMods;
+    private List<StandardMod> mods;
 
+    public Organism() {}
 
     //methods
+    //update math to not compound on its self numbers get too big
     public Double getPrice() {
 
         Double total = scale.getBasePrice().amount();
@@ -149,7 +151,7 @@ public class Organism {
         mods.add(singleMod);
     }
 
-    public ArrayList<StandardMod> getMods() {
+    public List<StandardMod> getMods() {
         return mods;
     }
 
