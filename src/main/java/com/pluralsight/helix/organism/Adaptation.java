@@ -1,5 +1,6 @@
 package com.pluralsight.helix.organism;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 @MappedSuperclass
@@ -18,6 +19,7 @@ public class Adaptation {
     @Column(name = "is_extra")
     private boolean isExtra;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "organism_id")
     private Organism organism;

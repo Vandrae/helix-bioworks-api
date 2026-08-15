@@ -1,5 +1,6 @@
 package com.pluralsight.helix.organism;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
@@ -14,6 +15,7 @@ public class StandardMod {
 
     private String name;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "organism_id")
     private Organism organism;

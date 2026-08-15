@@ -26,19 +26,19 @@ public class Organism {
 
     //@OneToMany tells jpa that each organism has multiple of this
     @JsonIgnore
-    @OneToMany(mappedBy = "organism")
+    @OneToMany(mappedBy = "organism", fetch = FetchType.EAGER)
     private List<DefensiveAdaptation> defenses;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "organism")
+    @OneToMany(mappedBy = "organism", fetch = FetchType.EAGER)
     private List<OffensiveAdaptation> weapons;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "organism")
+    @OneToMany(mappedBy = "organism", fetch = FetchType.EAGER)
     private List<Behaviors> behaviors;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "organism")
+    @OneToMany(mappedBy = "organism", fetch = FetchType.EAGER)
     private List<StandardMod> mods;
 
     public Organism() {}
