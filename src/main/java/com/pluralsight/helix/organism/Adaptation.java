@@ -24,19 +24,19 @@ public class Adaptation {
     private Organism organism;
 
     //methods
-    public Credits getPrice(Scale scale) {
+    public Double getPrice(Scale scale) {
         switch (scale) {
             case CLASS_I -> {
-                return new Credits(basePrice.amount() * 1);
+                return (basePrice * 1);
             }
             case CLASS_II -> {
-                return new Credits(basePrice.amount() * 2);
+                return (basePrice * 2);
             }
             case CLASS_III -> {
-                return new Credits(basePrice.amount() * 3);
+                return (basePrice * 3);
             }
             case CLASS_IV -> {
-                return new Credits(basePrice.amount() * 4);
+                return (basePrice * 4);
             }
             default -> throw new IllegalStateException("Unknown Scale Class");
 
@@ -65,11 +65,11 @@ public class Adaptation {
         this.name = name;
     }
 
-    public Credits getBasePrice() {
+    public Double getBasePrice() {
         return basePrice;
     }
 
-    public void setBasePrice(Credits basePrice) {
+    public void setBasePrice(Double basePrice) {
         this.basePrice = basePrice;
     }
 
