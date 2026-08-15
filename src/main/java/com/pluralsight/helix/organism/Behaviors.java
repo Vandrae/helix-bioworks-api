@@ -1,7 +1,9 @@
 package com.pluralsight.helix.organism;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
+@JsonIgnoreProperties("organism")
 @Entity
 @Table(name =  "behaviors")
 public class Behaviors {
