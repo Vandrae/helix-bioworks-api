@@ -1,13 +1,22 @@
 package com.pluralsight.helix.organism;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 
 @Entity
+@Table(name =  "standard_mods")
 public class StandardMod {
-    @ManyToOne
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
+
     private String name;
+
+    @ManyToOne
+    @JoinColumn(name = "organism_id")
+    private Organism organism;
+
+    public StandardMod() {}
 
     //methods
     @Override

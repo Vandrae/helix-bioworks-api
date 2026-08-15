@@ -7,6 +7,7 @@ import jakarta.persistence.Table;
 @Table(name = "defensive_adaptations")
 public class DefensiveAdaptation extends Adaptation {
 
+    public DefensiveAdaptation() {}
 
     //pulling from Adaptation
     public DefensiveAdaptation(String name, double basePrice, boolean isExtra) {

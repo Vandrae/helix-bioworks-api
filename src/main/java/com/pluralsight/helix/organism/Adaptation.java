@@ -12,7 +12,7 @@ public class Adaptation {
 
     private String name;
 
-    @Column(name = "base_price")
+    @Column(name = "cost")
     private double basePrice;
 
     @Column(name = "is_extra")
@@ -28,16 +28,16 @@ public class Adaptation {
     public Double getPrice(Scale scale) {
         switch (scale) {
             case CLASS_I -> {
-                return (basePrice * 1);
+                return (basePrice);
             }
             case CLASS_II -> {
-                return (basePrice * 2);
+                return (basePrice * 2.);
             }
             case CLASS_III -> {
-                return (basePrice * 3);
+                return (basePrice * 3.);
             }
             case CLASS_IV -> {
-                return (basePrice * 4);
+                return (basePrice * 4.);
             }
             default -> throw new IllegalStateException("Unknown Scale Class");
 

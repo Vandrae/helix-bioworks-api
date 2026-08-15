@@ -2,6 +2,7 @@ package com.pluralsight.helix.organism;
 
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
@@ -24,15 +25,19 @@ public class Organism {
     boolean acceleratedGrowth;
 
     //@OneToMany tells jpa that each organism has multiple of this
+    @JsonIgnore
     @OneToMany(mappedBy = "organism")
     private List<DefensiveAdaptation> defenses;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "organism")
     private List<OffensiveAdaptation> weapons;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "organism")
     private List<Behaviors> behaviors;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "organism")
     private List<StandardMod> mods;
 
@@ -42,7 +47,7 @@ public class Organism {
     //update math to not compound on its self numbers get too big
     public Double getPrice() {
 
-        Double total = scale.getBasePrice().amount();
+        Double total = scale.getBasePrice();
         int wepCount = 0;
         int defCount = 0;
         //loop through each item on the list then get the price of each weapon and add it to

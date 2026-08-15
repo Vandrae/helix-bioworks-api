@@ -34,7 +34,7 @@ public class Order {
     }
 
     public Double getTotal() {
-        Double total = 0;
+        Double total = 0.;
         for (Organism singleCreature : creature) {
             total = total + singleCreature.getPrice();
         }
