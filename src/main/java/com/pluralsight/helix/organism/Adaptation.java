@@ -23,6 +23,8 @@ public class Adaptation {
     @JoinColumn(name = "organism_id")
     private Organism organism;
 
+    public Adaptation() {}
+
     //methods
     public Double getPrice(Scale scale) {
         switch (scale) {
