@@ -21,7 +21,20 @@ public class Organism {
     @Enumerated(EnumType.STRING)
     private final Scale scale;
     boolean acceleratedGrowth;
+
+    //@OneToMany tells jpa that each organism has multiple of this
     @OneToMany(mappedBy = "organism")
+    private List<DefensiveAdaptation> defenses;
+
+    @OneToMany(mappedBy = "organism")
+    private List<OffensiveAdaptation> weapons;
+
+    @OneToMany(mappedBy = "organism")
+    private List<Behaviors> behaviors;
+
+    @OneToMany(mappedBy = "organism")
+    private List<StandardMod> standardMods;
+
 
     //methods
     public Credits getPrice() {
