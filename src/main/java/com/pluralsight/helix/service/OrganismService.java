@@ -16,4 +16,8 @@ public class OrganismService {
     public List<Organism> getAllOrganisms() {
         return organismRepository.findAll();
     }
+
+    public Organism getOrganismById(int id) {
+        return organismRepository.findById(id).orElse(null);
+    }
 }

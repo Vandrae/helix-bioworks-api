@@ -3,10 +3,7 @@ package com.pluralsight.helix.controller;
 import com.pluralsight.helix.organism.Organism;
 import com.pluralsight.helix.service.OrganismService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -26,8 +23,8 @@ public class OrganismController {
 
     //Get a single organism
     @GetMapping("/{id}")
-    public List<Organism> organismLookUp(){
-        return null;
+    public Organism organismLookUp(@PathVariable int id){
+        return organismService.getOrganismById(id);
     }
 
     //filter by genome
