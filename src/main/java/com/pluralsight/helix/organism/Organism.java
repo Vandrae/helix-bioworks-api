@@ -39,37 +39,38 @@ public class Organism {
 
 
     //methods
-    public Credits getPrice() {
+    public Double getPrice() {
 
-        Credits total = scale.getBasePrice();
+        Double total = scale.getBasePrice().amount();
         int wepCount = 0;
         int defCount = 0;
         //loop through each item on the list then get the price of each weapon and add it to
         // the price of the creature's size
         for (OffensiveAdaptation weapon : weapons) {
             if (wepCount <= 2) {
-                total = total.add(weapon.getPrice(scale));
+                total = total + weapon.getPrice(scale).amount();
             } else {
                 //compounding price if there are more than 3 adaptations on a single creature
                 //total of the first 3 x the price of the 4th
                 //total of 3 x the price of the 4th x the price of the 5th
-                total = new Credits(total.amount() * weapon.getPrice(scale).amount());
+                total = total * weapon.getPrice(scale).amount();
             }
             wepCount += 1;
         }
 
         for (DefensiveAdaptation defense : defenses) {
             if (defCount <= 2) {
-                total = total.add(defense.getPrice(scale));
+                total = total + defense.getPrice(scale).amount();
             } else {
-                total = new Credits(total.amount() * defense.getPrice(scale).amount());
+
+                total = total * defense.getPrice(scale).amount();
             }
             defCount += 1;
         }
 
         if (acceleratedGrowth) {
             //converting the product of amount and 1.15 back to a credit so it can be used
-            total = new Credits(total.amount() * 1.15);
+            total = total * 1.15;
         }
         return total;
     }
