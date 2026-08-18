@@ -66,9 +66,9 @@ Spliced from multiple predator lineages — big cat musculature, shark sensory a
 | Layer      | Technology                  |
 |------------|-----------------------------|
 | Language   | Java 17                     |
-| Framework  | Spring Boot                 |
+| Framework  | Spring Boot 4.1             |
 | ORM        | Spring Data JPA / Hibernate |
-| Database   | MySQL 8                     |
+| Database   | MySQL 9.7                   |
 | Build Tool | Maven                       |
 
 ---
@@ -93,17 +93,14 @@ cd helix-bioworks-api
 
 Open MySQL Workbench and run:
 ```sql
-CREATE DATABASE helix_db;
+CREATE DATABASE helix;
 ```
 
-Then run the seed file to create tables and load all 60 signature organisms:
-```
-src/main/resources/data.sql
-```
+The seed file at `src/main/resources/data.sql` runs automatically on startup and loads all 59 signature organisms across 6 genome types.
 
 **3. Set environment variables**
 
-Copy `.env.example` to `.env` and fill in your MySQL credentials:
+Add the following to your IntelliJ run configuration under **Edit Configurations → Environment Variables**, or set them in your shell:
 ```
 DB_USERNAME=your_mysql_username
 DB_PASSWORD=your_mysql_password
@@ -125,49 +122,50 @@ helix-bioworks-api/
 ├── src/
 │   └── main/
 │       ├── java/com/pluralsight/helix/
-│       │   ├── controllers/        # REST controllers
-│       │   ├── services/           # Business logic
-│       │   ├── repositories/       # Spring Data JPA repositories
-│       │   ├── models/             # JPA entity classes
+│       │   ├── controller/         # REST controllers
+│       │   ├── service/            # Business logic
+│       │   ├── repository/         # Spring Data JPA repositories
+│       │   ├── organism/           # JPA entity classes
+│       │   ├── order/              # Order-related classes
 │       │   └── HelixApplication.java
 │       └── resources/
 │           ├── application.properties
-│           └── data.sql            # Database seed data (60 organisms)
-├── .env.example                    # Environment variable template
+│           └── data.sql            # Seed data — 59 organisms, INSERT IGNORE safe
 ├── pom.xml
 └── README.md
 ```
 
 ---
-# Work in Progress
-
 
 ## API Endpoints
 
 > Base URL: `http://localhost:8080`
 
-| Method | Endpoint                        | Description                        |
-|--------|---------------------------------|------------------------------------|
-| GET    | `/organisms`                    | Get all organisms                  |
-| GET    | `/organisms/{id}`               | Get organism by ID                 |
-| GET    | `/organisms/genome/{genome}`    | Get organisms by genome type       |
-| GET    | `/organisms/{id}/adaptations`   | Get all adaptations for an organism|
-| POST   | `/organisms`                    | Add a new organism                 |
-| PUT    | `/organisms/{id}`               | Update an organism                 |
-| DELETE | `/organisms/{id}`               | Delete an organism                 |
+| Method | Endpoint                                        | Description                                        |
+|--------|-------------------------------------------------|----------------------------------------------------|
+| GET    | `/organisms`                                    | Get all organisms                                  |
+| GET    | `/organisms/{id}`                               | Get a single organism by ID                        |
+| GET    | `/organisms/genome/{genome}`                    | Filter by genome type                              |
+| GET    | `/organisms/size/{scale}`                       | Filter by scale class                              |
+| GET    | `/organisms/offensive-adaptation/{name}`        | Find organisms with a specific offensive adaptation|
+| GET    | `/organisms/defensive-adaptation/{name}`        | Find organisms with a specific defensive adaptation|
+| GET    | `/organisms/standard-adaptation/{name}`         | Find organisms with a specific standard mod        |
+| GET    | `/organisms/behavioral-adaptation/{name}`       | Find organisms with a specific behavior            |
 
----
+### Example Requests
 
-## Contributing
+```
+GET /organisms/genome/REPTILIAN
+GET /organisms/size/CLASS_IV
+GET /organisms/offensive-adaptation/Venom Glands
+GET /organisms/defensive-adaptation/Toxin Immunity
+GET /organisms/standard-adaptation/Pack Tactics
+GET /organisms/behavioral-adaptation/Territorial
+```
 
-Pull requests are welcome. For major changes, please open an issue first to discuss what you'd like to change.
+### Valid Genome Values
+`REPTILIAN` `AVIAN` `PRIMATE` `AQUATIC` `INSECTOID` `APEX`
 
-1. Fork the repo
-2. Create your feature branch: `git checkout -b feature/your-feature`
-3. Commit your changes: `git commit -m 'Add some feature'`
-4. Push to the branch: `git push origin feature/your-feature`
-5. Open a pull request
+### Valid Scale Values
+`CLASS_I` `CLASS_II` `CLASS_III` `CLASS_IV`
 
----
-
-*Helix Bioworks API — built as part of a Java/Spring Boot development learning path.*
