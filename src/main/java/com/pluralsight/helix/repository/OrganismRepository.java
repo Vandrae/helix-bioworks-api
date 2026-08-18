@@ -17,5 +17,8 @@ public interface OrganismRepository extends JpaRepository<Organism,Integer> {
 
     List<Organism> findByDefensesName( String name);
 
+    List<Organism> findByBehaviorsName( String name);
+
+    List<Organism> findByModsName( String name);
 }
 

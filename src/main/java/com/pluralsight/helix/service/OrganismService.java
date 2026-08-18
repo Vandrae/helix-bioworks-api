@@ -39,4 +39,12 @@ public class OrganismService {
     public List<Organism> getDefensiveAdaptationByDefensiveAdaptation(String name) {
         return organismRepository.findByDefensesName(name);
     }
+
+    public List<Organism> getStandardByStandard(String name) {
+        return organismRepository.findByModsName(name);
+    }
+
+    public List<Organism> getBehaviorByBehavior(String name) {
+        return organismRepository.findByBehaviorsName(name);
+    }
 }

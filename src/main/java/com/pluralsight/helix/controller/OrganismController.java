@@ -50,19 +50,19 @@ public class OrganismController {
     public List<Organism> defensiveFilter(@PathVariable String name){
         return organismService.getDefensiveAdaptationByDefensiveAdaptation(name);
     }
-//
-//    //filter by Standard Attributes
-//    @GetMapping
-//    public List<Organism> standardFilter(){
-//        return null;
-//    }
-//
-//    //filter by Behavioral Conditioning
-//    @GetMapping
-//    public List<Organism> behavioralFilter(){
-//        return null;
-//    }
-//
+
+    //filter by Standard Attributes
+    @GetMapping("/standard-adaptation/{name}")
+    public List<Organism> standardFilter(@PathVariable String name){
+        return organismService.getStandardByStandard(name);
+    }
+
+    //filter by Behavioral Conditioning
+    @GetMapping("/behavioral-adaptation/{name}")
+    public List<Organism> behavioralFilter(@PathVariable String name){
+        return organismService.getBehaviorByBehavior(name);
+    }
+
 //    //get all adaptations for one organism
 //    @GetMapping("/organisms/{id}/adaptations")
 //    public List<Organism> adaptationsLookUp(){
