@@ -1,6 +1,8 @@
 package com.pluralsight.helix.service;
 
+import com.pluralsight.helix.organism.Genome;
 import com.pluralsight.helix.organism.Organism;
+import com.pluralsight.helix.organism.Scale;
 import com.pluralsight.helix.repository.OrganismRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,5 +21,13 @@ public class OrganismService {
 
     public Organism getOrganismById(int id) {
         return organismRepository.findById(id).orElse(null);
+    }
+
+    public List<Organism> getGenomeByGenome(String genome) {
+        return organismRepository.findByGenome(Genome.valueOf(genome));
+    }
+
+    public List<Organism> getScaleByScale(String scale) {
+        return organismRepository.findByScale(Scale.valueOf(scale));
     }
 }

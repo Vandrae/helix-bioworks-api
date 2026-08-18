@@ -28,51 +28,45 @@ public class OrganismController {
     }
 
     //filter by genome
-    @GetMapping("/genome/{id}")
-    public List<Organism> genomeFilter(){
-        return null;
+    @GetMapping("/genome/{genome}")
+    public List<Organism> genomeFilter(@PathVariable String genome){
+        return organismService.getGenomeByGenome(genome);
     }
 
     //filter by size
-    @GetMapping("/size/{id}")
-    public List<Organism> sizeFilter(){
-        return null;
+    @GetMapping("/size/{scale}")
+    public List<Organism> sizeFilter(@PathVariable String scale){
+        return organismService.getScaleByScale(scale);
     }
-
-    //filter by Offensive Adapt
-    @GetMapping
-    public List<Organism> offensiveFilter(){
-        return null;
-    }
-
-    //filter by Defensive Adapt
-    @GetMapping
-    public List<Organism> defensiveFilter(){
-        return null;
-    }
-
-    //filter by Standard Attributes
-    @GetMapping
-    public List<Organism> standardFilter(){
-        return null;
-    }
-
-    //filter by Behavioral Conditioning
-    @GetMapping
-    public List<Organism> behavioralFilter(){
-        return null;
-    }
-
-    //filter by Accelerated Growth
-    @GetMapping
-    public List<Organism> growthFilter(){
-        return null;
-    }
-
-    //get all adaptations for one organism
-    @GetMapping("/organisms/{id}/adaptations")
-    public List<Organism> adaptationsLookUp(){
-        return null;
-    }
+//
+//    //filter by Offensive Adapt
+//    @GetMapping
+//    public List<Organism> offensiveFilter(){
+//        return null;
+//    }
+//
+//    //filter by Defensive Adapt
+//    @GetMapping
+//    public List<Organism> defensiveFilter(){
+//        return null;
+//    }
+//
+//    //filter by Standard Attributes
+//    @GetMapping
+//    public List<Organism> standardFilter(){
+//        return null;
+//    }
+//
+//    //filter by Behavioral Conditioning
+//    @GetMapping
+//    public List<Organism> behavioralFilter(){
+//        return null;
+//    }
+//
+//    //get all adaptations for one organism
+//    @GetMapping("/organisms/{id}/adaptations")
+//    public List<Organism> adaptationsLookUp(){
+//        return null;
+//    }
 
 }
