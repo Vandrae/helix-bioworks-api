@@ -38,12 +38,12 @@ public class OrganismController {
     public List<Organism> sizeFilter(@PathVariable String scale){
         return organismService.getScaleByScale(scale);
     }
-//
-//    //filter by Offensive Adapt
-//    @GetMapping
-//    public List<Organism> offensiveFilter(){
-//        return null;
-//    }
+
+    //filter by Offensive Adapt
+    @GetMapping("/offensive-adaptation/{name}")
+    public List<Organism> offensiveFilter(@PathVariable String name){
+        return organismService.getOffensiveAdaptationByOffensiveAdaptation(name);
+    }
 //
 //    //filter by Defensive Adapt
 //    @GetMapping

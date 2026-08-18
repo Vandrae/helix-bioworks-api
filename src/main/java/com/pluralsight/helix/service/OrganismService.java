@@ -1,6 +1,7 @@
 package com.pluralsight.helix.service;
 
 import com.pluralsight.helix.organism.Genome;
+import com.pluralsight.helix.organism.OffensiveAdaptation;
 import com.pluralsight.helix.organism.Organism;
 import com.pluralsight.helix.organism.Scale;
 import com.pluralsight.helix.repository.OrganismRepository;
@@ -29,5 +30,9 @@ public class OrganismService {
 
     public List<Organism> getScaleByScale(String scale) {
         return organismRepository.findByScale(Scale.valueOf(scale));
+    }
+
+    public List<Organism> getOffensiveAdaptationByOffensiveAdaptation(String name) {
+        return organismRepository.findByWeaponsName(name);
     }
 }
