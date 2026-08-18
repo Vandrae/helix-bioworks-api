@@ -63,4 +63,6 @@ public class OrganismController {
         return organismService.getBehaviorByBehavior(name);
     }
 
+    //add POST/PUT/DELETE endpoints
+
 }
