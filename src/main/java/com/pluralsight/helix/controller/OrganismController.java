@@ -44,12 +44,12 @@ public class OrganismController {
     public List<Organism> offensiveFilter(@PathVariable String name){
         return organismService.getOffensiveAdaptationByOffensiveAdaptation(name);
     }
-//
-//    //filter by Defensive Adapt
-//    @GetMapping
-//    public List<Organism> defensiveFilter(){
-//        return null;
-//    }
+
+    //filter by Defensive Adapt
+    @GetMapping("/defensive-adaptation/{name}")
+    public List<Organism> defensiveFilter(@PathVariable String name){
+        return organismService.getDefensiveAdaptationByDefensiveAdaptation(name);
+    }
 //
 //    //filter by Standard Attributes
 //    @GetMapping

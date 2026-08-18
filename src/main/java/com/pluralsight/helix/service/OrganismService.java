@@ -35,4 +35,8 @@ public class OrganismService {
     public List<Organism> getOffensiveAdaptationByOffensiveAdaptation(String name) {
         return organismRepository.findByWeaponsName(name);
     }
+
+    public List<Organism> getDefensiveAdaptationByDefensiveAdaptation(String name) {
+        return organismRepository.findByDefensesName(name);
+    }
 }
