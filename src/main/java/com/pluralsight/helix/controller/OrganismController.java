@@ -63,10 +63,4 @@ public class OrganismController {
         return organismService.getBehaviorByBehavior(name);
     }
 
-//    //get all adaptations for one organism
-//    @GetMapping("/organisms/{id}/adaptations")
-//    public List<Organism> adaptationsLookUp(){
-//        return null;
-//    }
-
 }
