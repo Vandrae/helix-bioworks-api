@@ -14,7 +14,7 @@ public class Adaptation {
     private String name;
 
     @Column(name = "cost")
-    private double basePrice;
+    private Double basePrice;
 
     @Column(name = "is_extra")
     private boolean isExtra;
