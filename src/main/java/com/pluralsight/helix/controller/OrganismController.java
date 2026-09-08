@@ -77,13 +77,16 @@ public class OrganismController {
         return organismService.updateOrganism(id, organism);
     }
 
-    @PutMapping("/X")
-    public Organism updateOffensiveAdaptation(@PathVariable){
-        return organismService.updateOffensiveAdaptation();
+    @PutMapping("/{organismId}/offensive-adaptation/{adaptationId}")
+    public OffensiveAdaptation updateOffensiveAdaptation(
+            @PathVariable int organismId,
+            @PathVariable int adaptationId,
+            @RequestBody OffensiveAdaptation offensiveAdaptation){
+        return organismService.updateOffensiveAdaptation(organismId,adaptationId,offensiveAdaptation);
     }
 
     @PutMapping("/{organismId}/defensive-adaptation/{adaptationId}")
-    public Organism updateDefensiveAdaptation(
+    public DefensiveAdaptation updateDefensiveAdaptation(
             @PathVariable int organismId,
             @PathVariable int adaptationId,
             @RequestBody DefensiveAdaptation defensiveAdaptation){
