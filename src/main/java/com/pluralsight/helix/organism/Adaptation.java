@@ -83,4 +83,8 @@ public class Adaptation {
     public void setExtra(boolean extra) {
         isExtra = extra;
     }
+
+    public void setOrganism(Organism organism) {
+        this.organism = organism;
+    }
 }

@@ -63,7 +63,7 @@ public class OrganismController {
         return organismService.getBehaviorByBehavior(name);
     }
 
-    //add POST/PUT/DELETE endpoints for
+    //add POST/DELETE endpoints for
     //DefensiveAdaptation
     //OffensiveAdaptation
     //StandardMod
@@ -113,8 +113,15 @@ public class OrganismController {
         return organismService.createOrganism(organism);
     }
 
+    @PostMapping("/{organismId}/offensive-adaptation")
+    public OffensiveAdaptation createOffensiveAdaptation(
+            @PathVariable int organismId,
+            @RequestBody OffensiveAdaptation offensiveAdaptation){
+        return organismService.createOffensiveAdaptation(organismId, offensiveAdaptation);
+    }
+
     //DELETE = DELETE
-    @DeleteMapping("/[id]")
+    @DeleteMapping("/{id}")
     public void deleteOrganism(@PathVariable int id){
         organismService.deleteOrganism(id);
     }

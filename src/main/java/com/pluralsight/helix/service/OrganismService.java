@@ -98,6 +98,15 @@ public class OrganismService {
         return organismRepository.save(organism);
     }
 
+    public OffensiveAdaptation createOffensiveAdaptation(
+        int organismId,
+        OffensiveAdaptation offensiveAdaptation){
+        Organism organism = organismRepository.findById(organismId).orElse(null);
+        offensiveAdaptation.setOrganism(organism);
+            return offensiveAdaptationRepository.save(offensiveAdaptation);
+    }
+
+
     //Delete methods
     public void deleteOrganism(int id){
         organismRepository.deleteById(id);
