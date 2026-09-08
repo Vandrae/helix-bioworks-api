@@ -72,6 +72,10 @@ public class OrganismController {
     }
 
     //POST = CREATE
+    @PostMapping("/{id}")
+    public Organism createOrganism(@RequestBody Organism organism){
+        return organismService.createOrganism(organism);
+    }
 
     //DELETE = DELETE
 

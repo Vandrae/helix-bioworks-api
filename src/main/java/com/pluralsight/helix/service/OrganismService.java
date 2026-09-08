@@ -49,7 +49,11 @@ public class OrganismService {
     }
 
     public Organism updateOrganism(int id, Organism updatedOrganism){
-    updatedOrganism.setID(id);
+        updatedOrganism.setID(id);
     return organismRepository.save(updatedOrganism);
+    }
+
+    public Organism createOrganism(Organism organism){
+        return organismRepository.save(organism);
     }
 }
