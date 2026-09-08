@@ -56,4 +56,8 @@ public class OrganismService {
     public Organism createOrganism(Organism organism){
         return organismRepository.save(organism);
     }
+
+    public void deleteOrganism(int id){
+        organismRepository.deleteById(id);
+    }
 }

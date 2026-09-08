@@ -78,6 +78,10 @@ public class OrganismController {
     }
 
     //DELETE = DELETE
+    @DeleteMapping("/[id]")
+    public void deleteOrganism(@PathVariable int id){
+        organismService.deleteOrganism(id);
+    }
 
 
 }
