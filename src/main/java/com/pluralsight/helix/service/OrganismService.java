@@ -140,4 +140,10 @@ public class OrganismService {
             int adaptationId){
         offensiveAdaptationRepository.deleteById(adaptationId);
     }
+
+    public void deleteDefensiveAdaptation(
+            int organismId,
+            int adaptationId){
+        defensiveAdaptationRepository.deleteById(adaptationId);
+    }
 }
