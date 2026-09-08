@@ -41,4 +41,9 @@ public class StandardMod {
     public void setName(String name) {
         this.name = name;
     }
+
+    //setter for setId in OrganismService
+    public void setId(int id) {
+        this.id = id;
+    }
 }

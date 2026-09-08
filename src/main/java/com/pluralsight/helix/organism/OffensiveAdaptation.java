@@ -16,7 +16,7 @@ public class OffensiveAdaptation extends Adaptation {
         super(name, basePrice, isExtra);
     }
 
-    //setter for setID in OrganismService
+    //setter for setId in OrganismService
     public void setId(int id) {
         this.id = id;
     }
