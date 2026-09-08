@@ -1,9 +1,7 @@
 package com.pluralsight.helix.service;
 
-import com.pluralsight.helix.organism.Genome;
-import com.pluralsight.helix.organism.OffensiveAdaptation;
-import com.pluralsight.helix.organism.Organism;
-import com.pluralsight.helix.organism.Scale;
+import com.pluralsight.helix.organism.*;
+import com.pluralsight.helix.repository.DefensiveAdaptationRepository;
 import com.pluralsight.helix.repository.OrganismRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,6 +13,8 @@ import java.util.List;
 public class OrganismService {
     @Autowired
     private OrganismRepository organismRepository;
+    @Autowired
+    private DefensiveAdaptationRepository defensiveAdaptationRepository;
 
     public List<Organism> getAllOrganisms() {
         return organismRepository.findAll();
@@ -49,8 +49,16 @@ public class OrganismService {
     }
 
     public Organism updateOrganism(int id, Organism updatedOrganism){
-        updatedOrganism.setID(id);
+        updatedOrganism.setId(id);
     return organismRepository.save(updatedOrganism);
+    }
+
+    public DefensiveAdaptation updateDefensiveAdaptation(
+            int organismId,
+            int adaptationId,
+            DefensiveAdaptation defensiveAdaptation){
+        defensiveAdaptation.setId(adaptationId);
+        return defensiveAdaptationRepository.save(defensiveAdaptation);
     }
 
     public Organism createOrganism(Organism organism){

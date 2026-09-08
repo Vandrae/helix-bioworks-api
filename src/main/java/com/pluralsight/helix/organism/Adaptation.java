@@ -9,7 +9,7 @@ public class Adaptation {
     //auto increment handled by the db because of (strategy = GenerationType.IDENTITY)
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    int id;
 
     private String name;
 

@@ -164,7 +164,7 @@ public class Organism {
     }
 
     //setter for setID in OrganismService
-    public void setID(int id) {
+    public void setId(int id) {
         this.id = id;
     }
 }

@@ -15,4 +15,9 @@ public class DefensiveAdaptation extends Adaptation {
     public DefensiveAdaptation(String name, double basePrice, boolean isExtra) {
         super(name, basePrice, isExtra);
     }
+
+    //setter for setID in OrganismService
+    public void setId(int id) {
+        this.id = id;
+    }
 }
