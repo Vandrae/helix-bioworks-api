@@ -65,4 +65,15 @@ public class OrganismController {
 
     //add POST/PUT/DELETE endpoints
 
+    //PUT = MODIFY
+    @PutMapping("/{id}")
+    public Organism updateOrganism(@PathVariable int id,@RequestBody Organism organism){
+        return organismService.updateOrganism(id, organism);
+    }
+
+    //POST = CREATE
+
+    //DELETE = DELETE
+
+
 }

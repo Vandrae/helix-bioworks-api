@@ -47,4 +47,9 @@ public class OrganismService {
     public List<Organism> getBehaviorByBehavior(String name) {
         return organismRepository.findByBehaviorsName(name);
     }
+
+    public Organism updateOrganism(int id, Organism updatedOrganism){
+    updatedOrganism.setID(id);
+    return organismRepository.save(updatedOrganism);
+    }
 }

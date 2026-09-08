@@ -163,7 +163,9 @@ public class Organism {
         behaviors.add(singleBehavior);
     }
 
-
-
+    //setter for setID in OrganismService
+    public void setID(int id) {
+        this.id = id;
+    }
 }
 
