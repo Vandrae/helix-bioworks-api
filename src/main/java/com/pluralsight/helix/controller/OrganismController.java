@@ -63,12 +63,6 @@ public class OrganismController {
         return organismService.getBehaviorByBehavior(name);
     }
 
-    //add POST/DELETE endpoints for
-    //DefensiveAdaptation
-    //OffensiveAdaptation
-    //StandardMod
-    //Behaviors
-
     //PUT endpoints
     @PutMapping("/{id}")
     public Organism updateOrganism(@PathVariable int id,@RequestBody Organism organism){
