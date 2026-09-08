@@ -147,5 +147,13 @@ public class OrganismController {
         organismService.deleteOrganism(id);
     }
 
+    @DeleteMapping("/{organismId}/offensive-adaptation/{adaptationId}")
+    public void deleteOffensiveAdaptation(
+            @PathVariable int organismId,
+            @PathVariable int adaptationId
+            ){
+        organismService.deleteOffensiveAdaptation(organismId, adaptationId);
+    }
+
 
 }

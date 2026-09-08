@@ -134,4 +134,10 @@ public class OrganismService {
     public void deleteOrganism(int id){
         organismRepository.deleteById(id);
     }
+
+    public void deleteOffensiveAdaptation(
+            int organismId,
+            int adaptationId){
+        offensiveAdaptationRepository.deleteById(adaptationId);
+    }
 }
