@@ -161,5 +161,11 @@ public class OrganismController {
         organismService.deleteOffensiveAdaptation(organismId, adaptationId);
     }
 
+    @DeleteMapping("/{organismId}/standard-adaptation/{adaptationId}")
+    public void deleteStandardAdaptation(
+            @PathVariable int organismId,
+            @PathVariable int adaptationId){
+        organismService.deleteStandardAdaptation(organismId, adaptationId);
+    }
 
 }

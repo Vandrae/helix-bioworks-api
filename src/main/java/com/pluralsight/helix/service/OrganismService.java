@@ -146,4 +146,11 @@ public class OrganismService {
             int adaptationId){
         defensiveAdaptationRepository.deleteById(adaptationId);
     }
+
+    public void deleteStandardAdaptation(
+            int organismId,
+            int adaptationId){
+        standardModRepository.deleteById(adaptationId);
+    }
+
 }
