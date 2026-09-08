@@ -1,10 +1,7 @@
 package com.pluralsight.helix.service;
 
 import com.pluralsight.helix.organism.*;
-import com.pluralsight.helix.repository.DefensiveAdaptationRepository;
-import com.pluralsight.helix.repository.OffensiveAdaptationRepository;
-import com.pluralsight.helix.repository.OrganismRepository;
-import com.pluralsight.helix.repository.StandardModRepository;
+import com.pluralsight.helix.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,7 +18,8 @@ public class OrganismService {
     private OffensiveAdaptationRepository offensiveAdaptationRepository;
     @Autowired
     private StandardModRepository standardModRepository;
-
+    @Autowired
+    private BehaviorsRepository behaviorsRepository;
 
 
     public List<Organism> getAllOrganisms() {
@@ -83,6 +81,14 @@ public class OrganismService {
             StandardMod standardMod){
         standardMod.setId(adaptationId);
         return standardModRepository.save(standardMod);
+    }
+
+    public Behaviors updateBehavior(
+            int organismId,
+            int adaptationId,
+            Behaviors behaviors){
+        behaviors.setId(adaptationId);
+        return behaviorsRepository.save(behaviors);
     }
 
     public Organism createOrganism(Organism organism){

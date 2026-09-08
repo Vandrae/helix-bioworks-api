@@ -1,9 +1,6 @@
 package com.pluralsight.helix.controller;
 
-import com.pluralsight.helix.organism.DefensiveAdaptation;
-import com.pluralsight.helix.organism.OffensiveAdaptation;
-import com.pluralsight.helix.organism.Organism;
-import com.pluralsight.helix.organism.StandardMod;
+import com.pluralsight.helix.organism.*;
 import com.pluralsight.helix.service.OrganismService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -102,9 +99,12 @@ public class OrganismController {
         return organismService.updateStandardMod(organismId,adaptationId,standardMod);
     }
 
-    @PutMapping("/X")
-    public Organism updateBehavior(@PathVariable){
-        return organismService.updateBehavior();
+    @PutMapping("/{organismId}/behavioral-adaptation/{adaptationId}")
+    public Behaviors updateBehavior(
+            @PathVariable int organismId,
+            @PathVariable int adaptationId,
+            @RequestBody Behaviors behaviors){
+        return organismService.updateBehavior(organismId,adaptationId,behaviors);
     }
 
     //POST = CREATE
