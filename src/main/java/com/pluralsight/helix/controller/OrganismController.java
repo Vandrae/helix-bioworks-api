@@ -168,4 +168,11 @@ public class OrganismController {
         organismService.deleteStandardAdaptation(organismId, adaptationId);
     }
 
+    @DeleteMapping("/{organismId}/behavioral-adaptation/{adaptationId}")
+    public void deleteBehavioralAdaptation(
+            @PathVariable int organismId,
+            @PathVariable int adaptationId){
+        organismService.deleteBehavioralAdaptation(organismId, adaptationId);
+    }
+
 }

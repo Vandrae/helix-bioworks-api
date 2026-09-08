@@ -153,4 +153,10 @@ public class OrganismService {
         standardModRepository.deleteById(adaptationId);
     }
 
+    public void deleteBehavioralAdaptation(
+            int organismId,
+            int adaptationId){
+        behaviorsRepository.deleteById(adaptationId);
+    }
+
 }
