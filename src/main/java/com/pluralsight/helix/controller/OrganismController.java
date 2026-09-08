@@ -134,6 +134,13 @@ public class OrganismController {
         return organismService.createStandardAdaptation(organismId, standardMod);
     }
 
+    @PostMapping("/{organismId}/behavioral-adaptation")
+    public Behaviors createBehavioralAdaptation(
+            @PathVariable int organismId,
+            @RequestBody Behaviors behaviors){
+        return organismService.createBehavioralAdaptation(organismId, behaviors);
+    }
+
     //DELETE = DELETE
     @DeleteMapping("/{id}")
     public void deleteOrganism(@PathVariable int id){

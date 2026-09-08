@@ -122,6 +122,14 @@ public class OrganismService {
         return standardModRepository.save(standardMod);
     }
 
+    public Behaviors createBehavioralAdaptation(
+            int organismId,
+            Behaviors behaviors){
+        Organism organism = organismRepository.findById(organismId).orElse(null);
+        behaviors.setOrganism(organism);
+        return behaviorsRepository.save(behaviors);
+    }
+
     //Delete methods
     public void deleteOrganism(int id){
         organismRepository.deleteById(id);

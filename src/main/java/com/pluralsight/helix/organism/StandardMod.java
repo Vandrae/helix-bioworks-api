@@ -47,6 +47,7 @@ public class StandardMod {
         this.id = id;
     }
 
+    //setter for setOrganism in OrganismService
     public void setOrganism(Organism organism) {
         this.organism = organism;
     }

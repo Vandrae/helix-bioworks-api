@@ -47,4 +47,8 @@ public class Behaviors {
     public void setId(int id) {
         this.id = id;
     }
+    //setter for setOrganism in OrganismService
+    public void setOrganism(Organism organism) {
+        this.organism = organism;
+    }
 }
