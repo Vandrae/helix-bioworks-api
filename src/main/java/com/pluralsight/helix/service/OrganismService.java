@@ -106,6 +106,14 @@ public class OrganismService {
             return offensiveAdaptationRepository.save(offensiveAdaptation);
     }
 
+    public DefensiveAdaptation createDefensiveAdaptation(
+            int organismId,
+            DefensiveAdaptation defensiveAdaptation){
+        Organism organism = organismRepository.findById(organismId).orElse(null);
+        defensiveAdaptation.setOrganism(organism);
+        return defensiveAdaptationRepository.save(defensiveAdaptation);
+    }
+
 
     //Delete methods
     public void deleteOrganism(int id){

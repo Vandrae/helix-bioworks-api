@@ -120,6 +120,13 @@ public class OrganismController {
         return organismService.createOffensiveAdaptation(organismId, offensiveAdaptation);
     }
 
+    @PostMapping("/{organismId}/defensive-adaptation")
+    public DefensiveAdaptation createDefensiveAdaptation(
+            @PathVariable int organismId,
+            @RequestBody DefensiveAdaptation defensiveAdaptation){
+        return organismService.createDefensiveAdaptation(organismId, defensiveAdaptation);
+    }
+
     //DELETE = DELETE
     @DeleteMapping("/{id}")
     public void deleteOrganism(@PathVariable int id){
