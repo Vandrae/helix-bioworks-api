@@ -102,7 +102,7 @@ public class OrganismController {
     }
 
     //POST = CREATE
-    @PostMapping("/{id}")
+    @PostMapping
     public Organism createOrganism(@RequestBody Organism organism){
         return organismService.createOrganism(organism);
     }
@@ -152,7 +152,7 @@ public class OrganismController {
     public void deleteDefensiveAdaptation(
             @PathVariable int organismId,
             @PathVariable int adaptationId){
-        organismService.deleteOffensiveAdaptation(organismId, adaptationId);
+        organismService.deleteDefensiveAdaptation(organismId, adaptationId);
     }
 
     @DeleteMapping("/{organismId}/standard-adaptation/{adaptationId}")
