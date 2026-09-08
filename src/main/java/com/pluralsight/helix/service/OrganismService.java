@@ -114,6 +114,13 @@ public class OrganismService {
         return defensiveAdaptationRepository.save(defensiveAdaptation);
     }
 
+    public StandardMod createStandardAdaptation(
+            int organismId,
+            StandardMod standardMod){
+        Organism organism = organismRepository.findById(organismId).orElse(null);
+        standardMod.setOrganism(organism);
+        return standardModRepository.save(standardMod);
+    }
 
     //Delete methods
     public void deleteOrganism(int id){

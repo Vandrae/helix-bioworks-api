@@ -127,6 +127,13 @@ public class OrganismController {
         return organismService.createDefensiveAdaptation(organismId, defensiveAdaptation);
     }
 
+    @PostMapping("/{organismId}/standard-adaptation")
+    public StandardMod createStandardAdaptation(
+            @PathVariable int organismId,
+            @RequestBody StandardMod standardMod){
+        return organismService.createStandardAdaptation(organismId, standardMod);
+    }
+
     //DELETE = DELETE
     @DeleteMapping("/{id}")
     public void deleteOrganism(@PathVariable int id){

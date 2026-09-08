@@ -46,4 +46,8 @@ public class StandardMod {
     public void setId(int id) {
         this.id = id;
     }
+
+    public void setOrganism(Organism organism) {
+        this.organism = organism;
+    }
 }
