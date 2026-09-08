@@ -69,7 +69,7 @@ public class OrganismController {
     //StandardMod
     //Behaviors
 
-    //PUT = MODIFY
+    //PUT endpoints
     @PutMapping("/{id}")
     public Organism updateOrganism(@PathVariable int id,@RequestBody Organism organism){
         return organismService.updateOrganism(id, organism);

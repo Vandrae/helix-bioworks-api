@@ -22,6 +22,7 @@ public class OrganismService {
     private BehaviorsRepository behaviorsRepository;
 
 
+    //Get methods
     public List<Organism> getAllOrganisms() {
         return organismRepository.findAll();
     }
@@ -54,6 +55,7 @@ public class OrganismService {
         return organismRepository.findByBehaviorsName(name);
     }
 
+    //Update methods
     public Organism updateOrganism(int id, Organism updatedOrganism){
         updatedOrganism.setId(id);
     return organismRepository.save(updatedOrganism);
@@ -91,10 +93,12 @@ public class OrganismService {
         return behaviorsRepository.save(behaviors);
     }
 
+    //Create methods
     public Organism createOrganism(Organism organism){
         return organismRepository.save(organism);
     }
 
+    //Delete methods
     public void deleteOrganism(int id){
         organismRepository.deleteById(id);
     }
