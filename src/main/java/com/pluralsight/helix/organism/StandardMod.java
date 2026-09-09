@@ -34,6 +34,10 @@ public class StandardMod {
     }
 
     //getter/setter
+    public int getId() {
+        return id;
+    }
+
     public String getName() {
         return name;
     }

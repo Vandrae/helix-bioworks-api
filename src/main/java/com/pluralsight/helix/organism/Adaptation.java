@@ -87,4 +87,10 @@ public class Adaptation {
     public void setOrganism(Organism organism) {
         this.organism = organism;
     }
+
+    public int getId() {
+        return id;
+    }
+
+
 }

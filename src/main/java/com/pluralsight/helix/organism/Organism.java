@@ -3,12 +3,14 @@ package com.pluralsight.helix.organism;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@JsonPropertyOrder({"id", "name", "genome", "scale", "acceleratedGrowth", "price", "defenses", "weapons", "mods", "behaviors"})
 @Entity
 @Table(name = "organisms")
 
@@ -25,19 +27,15 @@ public class Organism {
     boolean acceleratedGrowth;
 
     //@OneToMany tells jpa that each organism has multiple of this
-    @JsonIgnore
     @OneToMany(mappedBy = "organism", fetch = FetchType.EAGER)
     private List<DefensiveAdaptation> defenses;
 
-    @JsonIgnore
     @OneToMany(mappedBy = "organism", fetch = FetchType.EAGER)
     private List<OffensiveAdaptation> weapons;
 
-    @JsonIgnore
     @OneToMany(mappedBy = "organism", fetch = FetchType.EAGER)
     private List<Behaviors> behaviors;
 
-    @JsonIgnore
     @OneToMany(mappedBy = "organism", fetch = FetchType.EAGER)
     private List<StandardMod> mods;
 
@@ -168,8 +166,37 @@ public class Organism {
         this.id = id;
     }
 
+    public int getId() {
+        return id;
+    }
     public String getName() {
         return name;
     }
+
+    public Genome getGenome() {
+        return genome;
+    }
+
+    public Scale getScale() {
+        return scale;
+    }
+
+    public List<DefensiveAdaptation> getDefenses() {
+        return defenses;
+    }
+
+    public List<OffensiveAdaptation> getWeapons() {
+        return weapons;
+    }
+
+    public List<Behaviors> getBehaviors() {
+        return behaviors;
+    }
+
+    public boolean getAcceleratedGrowth() {
+        return acceleratedGrowth;
+    }
+
+
 }
 

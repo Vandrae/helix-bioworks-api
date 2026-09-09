@@ -35,6 +35,10 @@ public class Behaviors {
     }
 
     //getter/setter
+    public int getId() {
+        return id;
+    }
+
     public String getName() {
         return name;
     }
@@ -47,6 +51,7 @@ public class Behaviors {
     public void setId(int id) {
         this.id = id;
     }
+
     //setter for setOrganism in OrganismService
     public void setOrganism(Organism organism) {
         this.organism = organism;
