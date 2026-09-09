@@ -96,14 +96,13 @@ Open MySQL Workbench and run:
 CREATE DATABASE helix;
 ```
 
-The seed file at `src/main/resources/data.sql` runs automatically on startup and loads all 59 signature organisms across 6 genome types.
+Spring Boot will automatically run `schema.sql` to create the tables and `data.sql` to seed all 59 signature organisms on startup.
 
 **3. Set environment variables**
 
 Add the following to your IntelliJ run configuration under **Edit Configurations → Environment Variables**, or set them in your shell:
 ```
-DB_USERNAME=your_mysql_username
-DB_PASSWORD=your_mysql_password
+DB_USERNAME=your_mysql_username;DB_PASSWORD=your_mysql_password;
 ```
 
 **4. Run the app**
@@ -125,11 +124,12 @@ helix-bioworks-api/
 │       │   ├── controller/         # REST controllers
 │       │   ├── service/            # Business logic
 │       │   ├── repository/         # Spring Data JPA repositories
-│       │   ├── organism/           # JPA entity classes
+│       │   ├── organism/           # Organism entity classes
 │       │   ├── order/              # Order-related classes
 │       │   └── HelixApplication.java
 │       └── resources/
 │           ├── application.properties
+│           ├── schema.sql          # Table definitions — CREATE TABLE IF NOT EXISTS
 │           └── data.sql            # Seed data — 59 organisms, INSERT IGNORE safe
 ├── pom.xml
 └── README.md
@@ -141,26 +141,45 @@ helix-bioworks-api/
 
 > Base URL: `http://localhost:8080`
 
+### Organisms
+
 | Method | Endpoint                                        | Description                                        |
 |--------|-------------------------------------------------|----------------------------------------------------|
 | GET    | `/organisms`                                    | Get all organisms                                  |
-| GET    | `/organisms/{id}`                               | Get a single organism by ID                        |
+| GET    | `/organisms/{id}`                               | Get a single organism by ID with full details      |
 | GET    | `/organisms/genome/{genome}`                    | Filter by genome type                              |
 | GET    | `/organisms/size/{scale}`                       | Filter by scale class                              |
 | GET    | `/organisms/offensive-adaptation/{name}`        | Find organisms with a specific offensive adaptation|
 | GET    | `/organisms/defensive-adaptation/{name}`        | Find organisms with a specific defensive adaptation|
 | GET    | `/organisms/standard-adaptation/{name}`         | Find organisms with a specific standard mod        |
 | GET    | `/organisms/behavioral-adaptation/{name}`       | Find organisms with a specific behavior            |
+| POST   | `/organisms`                                    | Create a new organism                              |
+| POST   | `/organisms/{id}/offensive-adaptation`          | Add an offensive adaptation to an organism         |
+| POST   | `/organisms/{id}/defensive-adaptation`          | Add a defensive adaptation to an organism          |
+| POST   | `/organisms/{id}/standard-adaptation`           | Add a standard mod to an organism                  |
+| POST   | `/organisms/{id}/behavioral-adaptation`         | Add a behavior to an organism                      |
+| PUT    | `/organisms/{id}`                               | Update an organism                                 |
+| PUT    | `/organisms/{id}/offensive-adaptation/{adaptId}`| Update an offensive adaptation                     |
+| PUT    | `/organisms/{id}/defensive-adaptation/{adaptId}`| Update a defensive adaptation                      |
+| PUT    | `/organisms/{id}/standard-adaptation/{adaptId}` | Update a standard mod                              |
+| PUT    | `/organisms/{id}/behavioral-adaptation/{adaptId}`| Update a behavior                                 |
+| DELETE | `/organisms/{id}`                               | Delete an organism                                 |
+| DELETE | `/organisms/{id}/offensive-adaptation/{adaptId}`| Delete an offensive adaptation                     |
+| DELETE | `/organisms/{id}/defensive-adaptation/{adaptId}`| Delete a defensive adaptation                      |
+| DELETE | `/organisms/{id}/standard-adaptation/{adaptId}` | Delete a standard mod                              |
+| DELETE | `/organisms/{id}/behavioral-adaptation/{adaptId}`| Delete a behavior                                 |
 
 ### Example Requests
 
 ```
-GET /organisms/genome/REPTILIAN
-GET /organisms/size/CLASS_IV
-GET /organisms/offensive-adaptation/Venom Glands
-GET /organisms/defensive-adaptation/Toxin Immunity
-GET /organisms/standard-adaptation/Pack Tactics
-GET /organisms/behavioral-adaptation/Territorial
+GET  /organisms/genome/REPTILIAN
+GET  /organisms/size/CLASS_IV
+GET  /organisms/offensive-adaptation/Venom Glands
+GET  /organisms/defensive-adaptation/Toxin Immunity
+POST /organisms
+POST /organisms/1/offensive-adaptation
+PUT  /organisms/1
+DELETE /organisms/1
 ```
 
 ### Valid Genome Values
@@ -169,3 +188,27 @@ GET /organisms/behavioral-adaptation/Territorial
 ### Valid Scale Values
 `CLASS_I` `CLASS_II` `CLASS_III` `CLASS_IV`
 
+---
+
+## Roadmap
+
+- [ ] Order endpoints — create and manage organism orders
+- [ ] Exception handling — proper 404/400 error responses
+- [ ] Input validation — request body validation
+- [ ] Spring Security + JWT — authentication and authorization
+
+---
+
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you'd like to change.
+
+1. Fork the repo
+2. Create your feature branch: `git checkout -b feature/your-feature`
+3. Commit your changes: `git commit -m 'Add some feature'`
+4. Push to the branch: `git push origin feature/your-feature`
+5. Open a pull request
+
+---
+
+*Helix Bioworks API — built as part of a Java/Spring Boot development learning path.*
